@@ -7,6 +7,9 @@ import { createHttpLink } from 'apollo-link-http';
 import { ApolloLink } from 'apollo-link';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import App from './components/App';
+import LoginForm from './components/LoginForm';
+import SignupForm from './components/SignupForm';
+import Dashboard from './components/Dashboard';
 
 const cache = new InMemoryCache({
   dataIdFromObject: (object) => object.id || null,
@@ -39,7 +42,10 @@ const Root = () => {
     <ApolloProvider client={client}>
       <HashRouter>
         <Switch>
-          <Route path="/" component={App} exact />
+          <Route path="/" component={App} exact></Route>
+          <Route path="/login" component={LoginForm} />
+          <Route path="/signup" component={SignupForm} />
+          <Route path="/dashboard" component={Dashboard} />
         </Switch>
       </HashRouter>
     </ApolloProvider>

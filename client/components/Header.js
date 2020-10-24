@@ -39,14 +39,17 @@ class Header extends Component {
 
   render() {
     return (
-      <nav>
-        <div className="nav-wrapper">
-          <Link to="/" className="brand-logo left">
-            Home
-          </Link>
-          <ul className="right">{this.renderButtons()} </ul>
-        </div>
-      </nav>
+      <React.Fragment>
+        <nav>
+          <div className="nav-wrapper">
+            <Link to="/" className="brand-logo left">
+              Home
+            </Link>
+            <ul className="right">{this.renderButtons()} </ul>
+          </div>
+        </nav>
+        {this.props.children}
+      </React.Fragment>
     );
   }
 }

@@ -1,12 +1,12 @@
 import React from 'react';
 import Header from './Header';
 
-const App = (props) => {
+export default () => {
   return (
     <div className="container">
-      <Header />
+      <Header>
+        <div>You are logged in</div>
+      </Header>
     </div>
   );
 };
-
-export default App;
